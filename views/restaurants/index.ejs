@@ -1,0 +1,22 @@
+<!-- ../partials/header -->
+<%- include("../partials/header") %>
+<div class="content">
+<h1 >RESTAURANTS</h1>
+
+<a href="/restaurants/new" ><button><b>Add new</b></button></a>
+</div>
+
+<div class="rests">
+<% restaurants.forEach(function(restaurant){ %>
+    <div class="rest">
+        <h4><%= restaurant.name%></h4>
+        <img src="<%= restaurant.image%>">
+        <p>
+            <a href="/restaurants/<%= restaurant._id %>" ><button>Info</button></a>
+        </p>
+       
+    </div>
+<% }) %>
+</div>
+
+<%- include("../partials/footer") %>

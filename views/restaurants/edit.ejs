@@ -1,0 +1,11 @@
+<%- include("../partials/header") %>
+<h1 class="content">Edit <%= restaurant.name%></h1>
+
+<form action="/restaurants/<%= restaurant._id%>?_method=PUT" method="POST">
+    <input type="text" name="restaurant[name]" value="<%= restaurant.name%>">
+    <br>
+    <input type="text" name="restaurant[image]" value="<%= restaurant.image%>">
+    <br>
+    <input type="text" name="restaurant[description]" value="<%= restaurant.description%>"><br>
+    <button>Submit</button>
+</form>

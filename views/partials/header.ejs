@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurent Review</title>
+       <link rel="stylesheet" href="/stylesheets/main.css">
+       
+     
+    </head>
+    <body>
+        
+         
+        <div class="navbar">
+       
+            <a href="/"><b>FoodAdvisor</b></a>
+            <div class="nav-log">
+                <% if(!currentUser){ %>
+                    <a href="/login">Login</a>
+                    <a href="/register">Sign Up</a>
+                    <% } else { %>
+                        <a><%=currentUser.username %></a>
+                        <a href="/logout">Logout</a>
+                    <% } %>
+            </div>
+        </div>
+    

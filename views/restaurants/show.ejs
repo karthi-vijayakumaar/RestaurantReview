@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+
+<div class="show">
+<h1><%= restaurant.name%></h1>
+
+<img src="<%= restaurant.image%>">
+
+<h2><%= restaurant.description%></h2>
+
+<em><p>Submitted by <%= restaurant.author.username %></p></em>
+<div class="bttn">
+<% if(currentUser && restaurant.author.id.equals(currentUser._id)) {%>
+    <a href="/restaurants/<%= restaurant._id %>/edit"><button style="margin-left: 25px;">Edit post</button></a>
+    <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button >Delete</button>
+    </form>
+
+<% } %>
+</div>
+<br>
+<p>
+    <a href="/restaurants/<%= restaurant._id %>/comments/new">Add new comments</a>
+</p>
+<h2>Comments:</h2>
+<div class="cmt">
+<% restaurant.comments.forEach(function(comment){ %>
+    <p> 
+        <strong><%= comment.author.username%></strong>
+        <br></p>
+    <p><%= comment.text %> </p>
+    <hr>
+<% }) %>
+</div>
+</div>
+
+<%- include("../partials/footer") %>

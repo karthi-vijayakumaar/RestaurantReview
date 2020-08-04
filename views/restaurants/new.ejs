@@ -1,0 +1,13 @@
+<%- include("../partials/header") %>
+
+<h1 class="content">Add new Restaurant</h1>
+
+<form action="/restaurants" method="POST">
+    <input type="text" name="name" placeholder="name"><br>
+    <input type="text" name="image" placeholder="image url"><br>
+    <input type="text" name="description" placeholder="description"><br>
+    <button>Submit</button>
+</form>
+
+<!-- <a href="/restaurants" style="text-align: center;">Back</a> -->
+<%- include("../partials/footer") %>
